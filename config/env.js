@@ -1,4 +1,7 @@
+const browser = process.env.BROWSER.toLowerCase();
+const mode = process.env.MODE.toLowerCase();
+
 module.exports = {
-  browser: process.env.BROWSER,
-  mode: process.env.MODE,
+  browser: browser[0].toUpperCase() + browser.slice(1),
+  mode: mode,
 };

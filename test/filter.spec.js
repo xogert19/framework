@@ -71,10 +71,10 @@ describe("Filter items in catalog.", () => {
 
       expect(filtersHTML).to.be.equal(emptyFiltersHTML);
       expect(url).to.be.equal(pageWithoutFiltersURL);
-    } catch {
+    } catch (error) {
       makeScreenshot(this.driver, testMessage);
 
-      throw new Error(`Test failed: ${testMessage}`);
+      throw new Error(`Test failed: ${testMessage}\n${error}`);
     }
   }).timeout(TESTCASE_TIMEOUT);
 

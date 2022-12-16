@@ -80,10 +80,10 @@ describe("Filter items in catalog.", () => {
       const [minPrice, maxPrice] = calculatePricesWithTax(price, this.texasStateTax, this.texasMaxLocalTax);
       expect(totalPrice).to.be.greaterThanOrEqual(minPrice);
       expect(totalPrice).to.be.lessThanOrEqual(maxPrice);
-    } catch {
+    } catch (error) {
       makeScreenshot(this.driver, testMessage);
 
-      throw new Error(`Test failed: ${testMessage}`);
+      throw new Error(`Test failed: ${testMessage}\n${error}`);
     }
   }).timeout(TESTCASE_TIMEOUT);
 

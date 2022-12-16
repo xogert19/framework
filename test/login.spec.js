@@ -21,7 +21,7 @@ describe("Filter items in catalog.", () => {
     this.driver = await DriverSingleton.createDriver();
   });
 
-  it("Should login correctly", async () => {
+  it("Should login correctly.", async () => {
     const testMessage = "Should login correctly";
     try {
       const pageUrl = this.loginPageUrl;
@@ -38,15 +38,15 @@ describe("Filter items in catalog.", () => {
       const greeting = await mainPage.getGreeting();
 
       expect(greeting).to.be.contain(`Hi ${this.username}`);
-    } catch {
+    } catch (error) {
       makeScreenshot(this.driver, testMessage);
 
-      throw new Error(`Test failed: ${testMessage}`);
+      throw new Error(`Test failed: ${testMessage}\n${error}`);
     }
   }).timeout(TESTCASE_TIMEOUT);
 
-  it("Should fail login because of empty field", async () => {
-    const testMessage = "Should fail login because of empty field";
+  it("Should fail login because of empty email.", async () => {
+    const testMessage = "Should fail login because of empty email";
     try {
       const pageUrl = this.loginPageUrl;
 
@@ -61,14 +61,14 @@ describe("Filter items in catalog.", () => {
 
       const greeting = await mainPage.getGreeting();
       expect(greeting).to.be.contain(`Hi ${this.username}`);
-    } catch {
+    } catch (error) {
       makeScreenshot(this.driver, testMessage);
 
-      throw new Error(`Test failed: ${testMessage}`);
+      throw new Error(`Test failed: ${testMessage}\n${error}`);
     }
   }).timeout(TESTCASE_TIMEOUT);
 
-  it("Should fail login because of empty password", async () => {
+  it("Should fail login because of empty password.", async () => {
     const testMessage = "Should fail login because of empty password";
     try {
       const pageUrl = this.loginPageUrl;
@@ -84,14 +84,14 @@ describe("Filter items in catalog.", () => {
 
       const greeting = await mainPage.getGreeting();
       expect(greeting).to.be.contain(`Hi ${this.username}`);
-    } catch {
+    } catch (error) {
       makeScreenshot(this.driver, testMessage);
 
-      throw new Error(`Test failed: ${testMessage}`);
+      throw new Error(`Test failed: ${testMessage}\n${error}`);
     }
   }).timeout(TESTCASE_TIMEOUT);
 
-  it("Should fail login because of wrong password", async () => {
+  it("Should fail login because of wrong password.", async () => {
     const testMessage = "Should fail login because of wrong password";
     try {
       const pageUrl = this.loginPageUrl;
@@ -107,10 +107,10 @@ describe("Filter items in catalog.", () => {
 
       const greeting = await mainPage.getGreeting();
       expect(greeting).to.be.contain(`Hi ${this.username}`);
-    } catch {
+    } catch (error) {
       makeScreenshot(this.driver, testMessage);
 
-      throw new Error(`Test failed: ${testMessage}`);
+      throw new Error(`Test failed: ${testMessage}\n${error}`);
     }
   }).timeout(TESTCASE_TIMEOUT);
 

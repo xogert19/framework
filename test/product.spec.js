@@ -29,7 +29,7 @@ describe("Filter items in catalog.", () => {
   it("Should add backpack to cart.", async () => {
     const testMessage = "Should add backpack to cart";
     try {
-      const productPageUrl = this.backpackUrl;
+      const productPageUrl = this.productPageUrl;
       const cartPageUrl = this.cartPageUrl;
 
       const productPage = new ProductPage(this.driver);

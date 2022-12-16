@@ -40,7 +40,7 @@ describe("Filter items in catalog.", () => {
     const testMessage = "Should check if total cost changes when shipping to a specific state";
     try {
       // Adding backpack to the cart
-      const productPageUrl = this.backpackUrl;
+      const productPageUrl = this.productPageUrl;
       const cartPageUrl = this.cartPageUrl;
 
       const productPage = new ProductPage(this.driver);

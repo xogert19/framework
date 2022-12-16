@@ -18,16 +18,22 @@ class UserCreator {
     return new User(this.email, this.password);
   }
 
+  static async getUserWithoutEmail() {
+    await this.getCredentialsFromProperties();
+
+    return new User("", this.password);
+  }
+
   static async getUserWithoutPassword() {
     await this.getCredentialsFromProperties();
 
     return new User(this.email, "");
   }
 
-  static async getUserWithoutEmail() {
+  static async getUserWithWrongPassword() {
     await this.getCredentialsFromProperties();
 
-    return new User("", this.password);
+    return new User(this.email, this.wrongPassword);
   }
 }
 

@@ -22,6 +22,11 @@ class MainPage extends BasePage {
     MainPage.loginData = await UserCreator.getUserWithoutPassword();
   }
 
+  async getUserDataWithWrongPassword() {
+    logger.info("Getting user info with wrong password.");
+    MainPage.loginData = await UserCreator.getUserWithWrongPassword();
+  }
+
   async login() {
     logger.info("Start login operation.");
 

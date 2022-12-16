@@ -7,10 +7,10 @@ class DriverSingleton {
 
   static async createDriver() {
     switch (browser) {
-      case "chrome":
+      case "Chrome":
         this.driver = await this.createBrowserDriver(Browser.CHROME);
         break;
-      case "firefox":
+      case "Firefox":
         this.driver = await this.createBrowserDriver(Browser.FIREFOX);
         break;
       default:

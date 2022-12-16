@@ -1,10 +1,10 @@
 const fs = require("fs/promises");
 
-const { browser } = require("../config/env");
+const { browser, browserstackUsername, browserstackAccessKey } = require("../config/env");
 
 const createBrowserstackConfig = async () => {
-  const config = `userName: siarhei_PZnKCE
-accessKey: uC6xmcW8zPMtWKaMB2xR
+  const config = `userName: ${browserstackUsername}
+accessKey: ${browserstackAccessKey}
 platforms:
   - os: Windows
     osVersion: 10

@@ -9,7 +9,7 @@ const MainPage = require("../pages/MainPage");
 const { TESTCASE_TIMEOUT } = require("../config/constants");
 const { makeScreenshot } = require("../utils/utils");
 
-describe("Filter items in catalog.", () => {
+describe("Tests for login to site.", () => {
   before(async () => {
     const userProperties = await TestDataReader.getTestData("user.properties");
     for (const key in userProperties) {
@@ -42,6 +42,8 @@ describe("Filter items in catalog.", () => {
       makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
+    } finally {
+      await this.driver.quit();
     }
   }).timeout(TESTCASE_TIMEOUT);
 
@@ -65,6 +67,8 @@ describe("Filter items in catalog.", () => {
       makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
+    } finally {
+      await this.driver.quit();
     }
   }).timeout(TESTCASE_TIMEOUT);
 
@@ -88,6 +92,8 @@ describe("Filter items in catalog.", () => {
       makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
+    } finally {
+      await this.driver.quit();
     }
   }).timeout(TESTCASE_TIMEOUT);
 
@@ -111,6 +117,8 @@ describe("Filter items in catalog.", () => {
       makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
+    } finally {
+      await this.driver.quit();
     }
   }).timeout(TESTCASE_TIMEOUT);
 

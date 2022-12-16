@@ -12,7 +12,7 @@ const CheckoutLoginPage = require("../pages/CheckoutLoginPage");
 const { TESTCASE_TIMEOUT } = require("../config/constants");
 const { makeScreenshot, calculatePricesWithTax } = require("../utils/utils");
 
-describe("Filter items in catalog.", () => {
+describe("Complex test of checking price changing accordingly with state tax rate.", () => {
   before(async () => {
     const checkoutProperties = await TestDataReader.getTestData("checkout.properties");
     const productProperties = await TestDataReader.getTestData("product.properties");
@@ -84,6 +84,8 @@ describe("Filter items in catalog.", () => {
       makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
+    } finally {
+      await this.driver.quit();
     }
   }).timeout(TESTCASE_TIMEOUT);
 

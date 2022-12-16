@@ -10,7 +10,7 @@ const ProductPage = require("../pages/ProductPage");
 const { TESTCASE_TIMEOUT } = require("../config/constants");
 const { makeScreenshot } = require("../utils/utils");
 
-describe("Filter items in catalog.", () => {
+describe("Tests with products.", () => {
   before(async () => {
     const productProperties = await TestDataReader.getTestData("product.properties");
     const cartProperties = await TestDataReader.getTestData("cart.properties");
@@ -49,6 +49,8 @@ describe("Filter items in catalog.", () => {
       makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
+    } finally {
+      await this.driver.quit();
     }
   }).timeout(TESTCASE_TIMEOUT);
 

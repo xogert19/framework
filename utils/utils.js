@@ -5,8 +5,11 @@ const parsePrice = (totalPriceString) => {
 };
 
 const calculatePricesWithTax = (price, stateTax, localTax) => {
-  const minPrice = price * (stateTax / 100) + price;
-  const maxPrice = price * ((stateTax + localTax) / 100) + price;
+  const priceMaxIncrease = Math.ceil(price * ((stateTax + localTax) / 100) * 100) / 100;
+  const maxPrice = Math.ceil((price + priceMaxIncrease) * 100) / 100;
+
+  const priceMinIncrease = Math.floor(price * (stateTax / 100) * 100) / 100;
+  const minPrice = Math.floor((price + priceMinIncrease) * 100) / 100;
 
   return [minPrice, maxPrice];
 };

@@ -54,7 +54,7 @@ describe("Tests with products.", () => {
     }
   }).timeout(TESTCASE_TIMEOUT);
 
-  afterEach(async () => {
-    await DriverSingleton.killDriver();
-  });
+  // afterEach(async () => {
+  //   await DriverSingleton.killDriver();
+  // });
 });

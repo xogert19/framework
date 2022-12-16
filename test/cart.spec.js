@@ -89,7 +89,7 @@ describe("Complex test of checking price changing accordingly with state tax rat
     }
   }).timeout(TESTCASE_TIMEOUT);
 
-  afterEach(async () => {
-    await DriverSingleton.killDriver();
-  });
+  // afterEach(async () => {
+  //   await DriverSingleton.killDriver();
+  // });
 });

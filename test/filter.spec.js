@@ -82,7 +82,7 @@ describe("Filter items in catalog.", () => {
     }
   }).timeout(TESTCASE_TIMEOUT);
 
-  afterEach(async () => {
-    await DriverSingleton.killDriver();
-  });
+  // afterEach(async () => {
+  //   await DriverSingleton.killDriver();
+  // });
 });

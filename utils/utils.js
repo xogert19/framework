@@ -19,7 +19,7 @@ const makeScreenshot = async (driver, message) => {
   const screenshotName = message.toLowerCase().split(" ").join("-");
   const date = new Date();
 
-  const day = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
+  const day = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
   const time = `${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`;
 
   await driver.takeScreenshot().then((image) => {

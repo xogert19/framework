@@ -49,12 +49,10 @@ describe("Tests with products.", () => {
       makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
-    } finally {
-      await this.driver.quit();
     }
   }).timeout(TESTCASE_TIMEOUT);
 
-  // afterEach(async () => {
-  //   await DriverSingleton.killDriver();
-  // });
+  afterEach(async () => {
+    await DriverSingleton.killDriver();
+  });
 });

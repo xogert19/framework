@@ -47,8 +47,6 @@ describe("Filter items in catalog.", () => {
       makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}`);
-    } finally {
-      await this.driver.quit();
     }
   }).timeout(TESTCASE_TIMEOUT);
 
@@ -77,12 +75,10 @@ describe("Filter items in catalog.", () => {
       makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
-    } finally {
-      await this.driver.quit();
     }
   }).timeout(TESTCASE_TIMEOUT);
 
-  // afterEach(async () => {
-  //   await DriverSingleton.killDriver();
-  // });
+  afterEach(async () => {
+    await DriverSingleton.killDriver();
+  });
 });

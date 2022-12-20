@@ -42,8 +42,6 @@ describe("Tests for login to site.", () => {
       makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
-    } finally {
-      await this.driver.quit();
     }
   }).timeout(TESTCASE_TIMEOUT);
 
@@ -67,8 +65,6 @@ describe("Tests for login to site.", () => {
       makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
-    } finally {
-      await this.driver.quit();
     }
   }).timeout(TESTCASE_TIMEOUT);
 
@@ -92,8 +88,6 @@ describe("Tests for login to site.", () => {
       makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
-    } finally {
-      await this.driver.quit();
     }
   }).timeout(TESTCASE_TIMEOUT);
 
@@ -117,12 +111,10 @@ describe("Tests for login to site.", () => {
       makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
-    } finally {
-      await this.driver.quit();
     }
   }).timeout(TESTCASE_TIMEOUT);
 
-  // afterEach(async () => {
-  //   await DriverSingleton.killDriver();
-  // });
+  afterEach(async () => {
+    await DriverSingleton.killDriver();
+  });
 });

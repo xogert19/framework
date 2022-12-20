@@ -39,7 +39,7 @@ describe("Tests for login to site.", () => {
 
       expect(greeting).to.be.contain(`Hi ${this.username}`);
     } catch (error) {
-      makeScreenshot(this.driver, testMessage);
+      await makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
     }
@@ -62,7 +62,7 @@ describe("Tests for login to site.", () => {
       const greeting = await mainPage.getGreeting();
       expect(greeting).to.be.contain(`Hi ${this.username}`);
     } catch (error) {
-      makeScreenshot(this.driver, testMessage);
+      await makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
     }
@@ -85,7 +85,7 @@ describe("Tests for login to site.", () => {
       const greeting = await mainPage.getGreeting();
       expect(greeting).to.be.contain(`Hi ${this.username}`);
     } catch (error) {
-      makeScreenshot(this.driver, testMessage);
+      await makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
     }
@@ -108,7 +108,7 @@ describe("Tests for login to site.", () => {
       const greeting = await mainPage.getGreeting();
       expect(greeting).to.be.contain(`Hi ${this.username}`);
     } catch (error) {
-      makeScreenshot(this.driver, testMessage);
+      await makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
     }

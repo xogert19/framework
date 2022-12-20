@@ -46,7 +46,7 @@ describe("Tests with products.", () => {
 
       expect(productNameInProductPage).to.be.equal(productNameInCartPage);
     } catch (error) {
-      makeScreenshot(this.driver, testMessage);
+      await makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
     }

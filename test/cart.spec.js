@@ -81,7 +81,7 @@ describe("Complex test of checking price changing accordingly with state tax rat
       expect(totalPrice).to.be.greaterThanOrEqual(minPrice);
       expect(totalPrice).to.be.lessThanOrEqual(maxPrice);
     } catch (error) {
-      makeScreenshot(this.driver, testMessage);
+      await makeScreenshot(this.driver, testMessage);
 
       throw new Error(`Test failed: ${testMessage}\n${error}`);
     }
